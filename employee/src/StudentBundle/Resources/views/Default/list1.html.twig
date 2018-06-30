@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+<head>
+  {% block head %}
+  <title>{% block title %}{% endblock %} - List Student</title>
+  <link rel="stylesheet" href="navigation.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  {% endblock %}
+</head>
+<body>
+  {% block body %}
+  <div class= "container">
+    <br>
+    <br>
+    <h1 class ="text-warning" align="center"> 
+      Displaying Student data </h1>
+      <br>
+      <br>
+
+      <a href="http://localhost/student/marks/add"  class ="btn-primary btn updatebtn" class="button">ADD STUDENT</a>
+      <a href="http://localhost/student/marks/addsubject"  class ="btn-primary btn updatebtn" class="button">ADD SUBJECT</a>
+      <a href="http://localhost/student/marks/editit"  class ="btn-primary btn updatebtn" class="button">ADD MARKS</a>
+
+{%for key in student %}
+<div>
+{{key.id}}
+{{key.student_name}}
+{{key.mobile}}
+</div>
+{% endfor%}
+    {% endblock %}
+  </div>
+  </body>
+  </html>

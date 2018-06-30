@@ -1,0 +1,34 @@
+<script >
+(function()
+  { var req;
+    document.getElementById("delete").addEventListener('click',makeRequest);
+    function makeRequest(){
+      req = new XMLHttpRequest();
+      if(!req)
+      {
+        alert('Giving up:( Cannot create an XMLHTTP instance');
+      return false; 
+      }
+        req.onreadystatechange = alertContents;
+        req.open = ('GET','employee_view.php');
+        req.send = ();
+req.onreadystatechange = alertContents;
+    }
+
+    function alertContents(){
+      if(req.readyState==XMLHttpRequest.Done)
+        if (req.status === 200) {
+        alert(req.responseText);
+      } else 
+      {
+        alert('There was a problem with the request.');
+      }
+      
+
+      }
+    }
+  })();
+</script>
+
+
+<a href ="delete.php?id=<?php  echo $res['ID']; ?>" class ="text-white"> Delete</a>

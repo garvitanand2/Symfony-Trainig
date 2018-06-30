@@ -1,0 +1,6 @@
+homepage:
+    path: /
+    defaults: { _controller: StudentBundle:Default:index }
+student:
+  resource: "@StudentBundle/Resources/config/routing.yml"
+  prefix: /student

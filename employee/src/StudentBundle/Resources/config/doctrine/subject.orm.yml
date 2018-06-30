@@ -1,0 +1,18 @@
+StudentBundle\Entity\subject:
+    type: entity
+    table: null
+    repositoryClass: StudentBundle\Repository\subjectRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        subjectname:
+            type: string
+    oneToMany:
+        subjectmarks:
+            targetEntity: StudentBundle\Entity\studentmarks
+            mappedBy: subject      
+    lifecycleCallbacks: {  }

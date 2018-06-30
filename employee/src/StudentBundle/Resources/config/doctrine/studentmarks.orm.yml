@@ -1,0 +1,28 @@
+StudentBundle\Entity\studentmarks:
+    type: entity
+    table: null
+    repositoryClass: StudentBundle\Repository\studentmarksRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        marks:
+            type: integer
+    manyToOne:
+        student:
+            targetEntity:  StudentBundle\Entity\student
+            inversedBy: subjectmarks
+            joinColumn:
+              name: student
+              referencedColumnName: id
+        subject:
+            targetEntity:  StudentBundle\Entity\subject
+            inversedBy: subjectmarks
+            joinColumn:
+              name: subject
+              referencedColumnName: id
+    
+    lifecycleCallbacks: {  }

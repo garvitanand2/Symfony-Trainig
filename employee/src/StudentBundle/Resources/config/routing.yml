@@ -1,0 +1,24 @@
+marks_list:
+    path: /marks/list
+    defaults: { _controller: StudentBundle:Default:markslist }
+marks_add:
+    path: /marks/add
+    defaults: { _controller: StudentBundle:Default:marksadd }
+marks_adddb:
+    path: /marks/adddb
+    defaults: { _controller: StudentBundle:Default:marksadddb }
+marks_addsub:
+    path: /marks/addsubject
+    defaults: { _controller: StudentBundle:Default:marksaddsub }
+marks_addsubdb:
+    path: /marks/addsubdb
+    defaults: { _controller: StudentBundle:Default:marksaddsubdb }
+marks_addedit:
+    path: /marks/editit
+    defaults: { _controller: StudentBundle:Default:marksaddedit }
+marks_addeditdb:
+    path: /marks/addedititdb
+    defaults: { _controller: StudentBundle:Default:marksaddeditdb }            
+marks_view:
+    path: /marks/view/{studentid}
+    defaults: { _controller: StudentBundle:Default:marksview,studentid:""}    

@@ -1,0 +1,21 @@
+StudentBundle\Entity\student:
+    type: entity
+    table: null
+    repositoryClass: StudentBundle\Repository\studentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        studentName:
+            type: string
+        mobile:
+            type: integer
+    oneToMany:
+        subjectmarks:
+            targetEntity: StudentBundle\Entity\studentmarks
+            mappedBy: student
+            
+    lifecycleCallbacks: {  }

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html> 
+<head>
+  <link rel="stylesheet" href="navigation.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class= "container">
+    <br>
+    <br>
+    <h1 class ="text-warning" align="center"> 
+      Displaying Particular  Student data </h1>
+<br>
+<br>
+<div align="center">
+<a href="http://localhost/student/marks/add"  class ="btn-primary btn updatebtn" class="button">ADD STUDENT</a>
+<a href="http://localhost/student/marks/addsubject"  class ="btn-primary btn updatebtn" class="button">ADD SUBJECT</a>
+<a href="http://localhost/student/marks/editit"  class ="btn-primary btn updatebtn" class="button">ADD MARKS</a>
+<a href="http://localhost/student/marks/list"  class ="btn-primary btn updatebtn" class="button">View List</a>
+</div>
+
+
+      <table class = "table table-stripped table-hover table-border" >
+
+        <tr class ="bg-dark text-white text-centre" >
+          <th>ID</th>
+          <th>Name</th>
+          <th>Contact Number</th>
+          <th>Subject</th>
+          <th>Marks </th>
+          <th>Show</th>
+        </tr>
+        
+
+        <tbody>
+          {% for item in studentmarks %}
+          <tr>
+            <td scope="row" >{{ item.id }}</td>
+            <td scope="row" name = "name" method="post" ><a href="{{path('marks_view',{studentid : item.id})}}">{{ item.student.studentname}}</a></td>
+            <td scope="row">{{ item.student.mobile}}</td>
+            <td scope="row">{{ item.subject.subjectname }}</td>
+            <td scope="row">{{ item.marks }}</td> 
+            <td><a href="http://localhost/student/marks/view" class="show">view </a></td>
+          </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </body>
+</html>
